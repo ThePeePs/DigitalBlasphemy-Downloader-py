@@ -1,0 +1,258 @@
+# Note Lines begging with "#" are comments and will not
+# be part of the configuration, unless they are deleted.
+# Inline comments can be deleted.
+
+# Edit settings as needed or desired.
+
+
+# Digital Blasphemy site settings
+dbinfo:
+  user: user
+  pass: password
+
+  # Use blurb about new image from preview page or RSS feed
+  # in email notification.
+  # PLEASE NOTE: Ryan does not always have a blurb on the preview page.
+  # Its best to use the blurb from the RSS feed (also contains preview image).
+  blurb: site                      # (rss/site)
+
+  # Number of times to retry to download images.
+  retries: 3
+
+# HTTP Settings
+proxy:
+  use: no                         # (yes/no)
+  servers:
+    - http://proxy.host:8080      # type://host:port
+#    - http://if.more.then.one:9090
+
+# Mail settings
+mail:
+  send: no          # (yes/no)
+
+  # Addresses should be in the following format
+  # <Display Name>,<account>,<domain>   (Display Name<account@domain.com>)
+  # If sending to multiple address, please separate by a ':'
+  to: name,user,example.com
+  from: DB Downloader,dbdownloader,example.com
+  server: mail.example.com
+  port: 25
+
+  # Mail authentication
+  # PLEASE NOTE: CRAM-MD5 depends on Digest::HMAC_MD5
+  # NTLM depends on Authen::NTLM
+  auth_req: no       # (yes/no)
+  autht_ype: PLAIN   # allowed types (LOGIN, PLAIN, CRAM-MD5 and NTLM)
+  auth_domain:       # Only optionally needed for NTLM auth. (check your server settings)
+  user: user
+  pass: password
+
+filepath:
+  # Pick the correct one for your system, and edit to your liking.
+  # Environmental variables can be used as __VARIABLENAME__.
+
+  # Windows
+#  datadir: __APPDATA__/db-rss-reader
+
+  # *nix and OSX (Mac)
+#  datadir: __HOME__/.db-rss-reader
+
+  # Base Directory for image files.
+  # Windows
+#  basedir: __USERPROFILE__/My Documents/My Pictures/DigitalBlasphemy
+
+  # *.nix and OSX (Mac)
+#  basedir: __HOME__/Pictures/DigitalBlasphemy
+
+# Logging Settings (This can be overridden via the cli options.)
+logging:
+
+  # Level of logging you want (logging will be that level and higher)
+  # Choices are (highest to lowest): CRITICAL, ERROR, WARNING, INFO, DEBUG
+  level: INFO
+
+  # Name of log file (Saved to datadir/logfile)
+  logfile: log.txt
+
+  # Also log to STDOUT? (console/cmd window).
+  consolelog: no # (yes/no)
+
+# Image sizes that you would like to download.
+# You can change the save path and name to your liking.
+# Please note: __IMGNAME__ must be in the path, as it is used
+# as a place holder for the title of the image
+# (ex: __IMGNAME__.jpg becomes Fluorescence.jpg)
+
+# Uncomment the ones you would like.
+# Also, you can add any new size that is not listed below,
+# Please follow the same format of:
+# - size: <length> x <height>
+#   path: your/path/here/__IMGNAME__.jpg
+dlsizes:
+# Free Sizes
+  - size: 850 x 315
+    path: free/FacebookCover/__IMGNAME__.jpg       # Facebook Cover
+
+#  - size: 480 x 800
+#    path: free/FreeMobile/__IMGNAME__.jpg         # Free Mobile
+
+#  - size: 640 x 960
+#    path: free/iPhone4/__IMGNAME__.jpg            # iPhone 4
+
+
+# Mobile Sizes
+#  - size: 640 x 1136
+#    path: mobile/iPhone5/__IMGNAME__.jpg          # iPhone 5
+
+#  - size: 750 x 1344
+#    path: mobile/iPhone6-7-8/__IMGNAME__.jpg      # iPhone 6/7/8
+
+#  - size: 1920 x 1920
+#    path: mobile/iPhone6-7-8+/__IMGNAME__.jpg     # iPhone 6/7/8+
+
+#  - size: 750 x 1344
+#    path: mobile/iPhoneX/__IMGNAME__.jpg          # iPhone X
+
+#  - size: 960 x 544
+#    path: mobile/PSVita/__IMGNAME__.jpg           # PS Vita
+
+#  - size: 1080 x 1920
+#    path: mobile/AndroidHD/__IMGNAME__.jpg        # Android HD
+
+#  - size: 1024 x 1024
+#    path: mobile/iPad1_2-Mini/__IMGNAME__.jpg     # iPad 1&2/Mini
+
+#  - size: 2160 x 1440
+#    path: mobile/Surface3/__IMGNAME__.jpg         # Surface 3
+
+#  - size: 2048 x 2048
+#    path: mobile/RetinaiPad-Mini/__IMGNAME__.jpg  # Retina iPad/Mini
+
+#  - size: 2560 x 2560
+#    path: mobile/SamsungGalaxy/__IMGNAME__.jpg    # Samsung Galaxy
+
+
+# Single Screen Sizes
+#  - size: 1024 x 768
+#    path: single/1024x768__IMGNAME__.jpg           # 1024 x 768 (4:3)
+
+#  - size: 1152 x 864
+#    path: single/1152x864__IMGNAME__.jpg           # 1152 x 864 (4:3)
+
+#  - size: 1600 x 1200
+#    path: single/1600x1200__IMGNAME__.jpg          # 1600 x 1200 (4:3)
+
+#  - size: 1280 x 1024
+#    path: single/1280x1024__IMGNAME__.jpg          # 1280 x 1024 (5:4)
+
+#  - size: 1280 x 800
+#    path: single/1280x800__IMGNAME__.jpg           # 1280 x 800 (16:10)
+
+#  - size: 1366 x 768
+#    path: single/1366x768__IMGNAME__.jpg           # 1366 x 768 (16:9)
+
+#  - size: 1600 x 900
+#    path: single/1600x900__IMGNAME__.jpg           # 1600 x 900 (16:9)
+
+#  - size: 1920 x 1080
+#    path: single/1920x1080__IMGNAME__.jpg          # 1920 x 1080 (16:9 - HDTV/1080p)
+
+#  - size: 2560 x 1440
+#    path: single/2560x1440__IMGNAME__.jpg          # 2560 x 1440 (16:9)
+
+#  - size: 1440 x 900
+#    path: single/1440x900__IMGNAME__.jpg           # 1440 x 900 (16:10)
+
+#  - size: 1680 x 1050
+#    path: single/1680x1050__IMGNAME__.jpg          # 1680 x 1050 (16:10)
+
+#  - size: 1920 x 1200
+#    path: single/1920x1200__IMGNAME__.jpg          # 1920 x 1200 (16:10)
+
+#  - size: 2560 x 1600
+#    path: single/2560x1600__IMGNAME__.jpg          # 2560 x 1600 (16:10)
+
+#  - size: 3440 x 1440
+#    path: single/3440x1440__IMGNAME__.jpg          # 3440 x 1440 (21:9)
+
+#  - size: 2880 x 1800
+#    path: single/2880x1800__IMGNAME__.jpg          # 2880 x 1800 (16:10)
+
+#  - size: 3840 x 2160
+#    path: single/UHD/__IMGNAME__.jpg              # 3840 x 2160 (UHD 16:9)
+
+#  - size: 4096 x 2304
+#    path: single/4K/__IMGNAME__.jpg               # 4096 x 2304 (4K 16:9)
+
+#  - size: 5120 x 2880
+#    path: single/5K/__IMGNAME__.jpg               # 5120 x 2880 (5K 16:9)
+
+#  - size: 8192 x 4096
+#    path: vr/2d/__IMGNAME__.jpg                   # 8192 x 4096 (VR 360)
+
+#  - size: 8192 x 8192
+#    path: vr/3d/__IMGNAME__.jpg                   # 8192 x 8192 (VR 360/3D)
+
+
+# Dual Screen Sizes
+#  - size: 2560 x 1024
+#    path: dual/2560x1024__IMGNAME__.jpg            # 2560 x 1024
+
+#  - size: 3200 x 1200
+#    path: dual/3200x1200__IMGNAME__.jpg            # 3200 x 1200
+
+#  - size: 3840 x 1080
+#    path: dual/3840x1080__IMGNAME__.jpg            # 3840 x 1080
+
+#  - size: 5120 x 1440
+#    path: dual/5120x1440__IMGNAME__.jpg            # 5120 x 1440
+
+#  - size: 3360 x 1050
+#    path: dual/3360x1050__IMGNAME__.jpg            # 3360 x 1050
+
+#  - size: 3840 x 1200
+#    path: dual/3840x1200__IMGNAME__.jpg            # 3840 x 1200
+
+#  - size: 5120 x 1600
+#    path: dual/5120x1600__IMGNAME__.jpg            # 5120 x 1600
+
+#  - size: 8192 x 2304
+#    path: dual/8192x2304__IMGNAME__.jpg            # 8192 x 2304
+
+#  - size: 7680 x 2160
+#    path: dual/7680x2160__IMGNAME__.jpg            # 7680 x 2160
+
+#  - size: 10240 x 2880
+#    path: dual/10240x2880__IMGNAME__.jpg           # 10240 x 2880
+
+
+# Triple Screen Sizes
+#  - size: 3840 x 1024
+#    path: triple/3840x1024__IMGNAME__.jpg          # 3840 x 1024
+
+#  - size: 4800 x 1200
+#    path: triple/4800x1200__IMGNAME__.jpg          # 4800 x 1200
+
+#  - size: 5760 x 1080
+#    path: triple/5760x1080__IMGNAME__.jpg          # 5760 x 1080
+
+#  - size: 7680 x 1440
+#    path: triple/7680x1440__IMGNAME__.jpg          # 7680 x 1440
+
+#  - size: 5040 x 1050
+#    path: triple/5040x1050__IMGNAME__.jpg          # 5040 x 1050
+
+#  - size: 5760 x 1200
+#    path: triple/5760x1200__IMGNAME__.jpg          # 5760 x 1200
+
+#  - size: 7680 x 1600
+#    path: triple/7680x1600__IMGNAME__.jpg          # 7680 x 1600
+
+#  - size: 12288 x 2304
+#    path: triple/12288x2304__IMGNAME__.jpg         # 12288 x 2304
+
+#  - size: 11520 x 2160
+#    path: triple/11520x2160__IMGNAME__.jpg         # 11520 x 2160
+
+#  - size: 15360 x 2880
+#    path: triple/15360x2880__IMGNAME__.jpg         # 15360 x 2880
