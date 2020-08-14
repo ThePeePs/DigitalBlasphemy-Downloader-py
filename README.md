@@ -62,4 +62,6 @@ Then run the script from it's directory.
 
 I suggest you set it up as a cron job to run at least once a week.
 
-
+### TODO
+* cleanup href's for text version of email
+* add option to sort by gallery as well as by size
