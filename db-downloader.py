@@ -80,6 +80,7 @@ db_site = "https://digitalblasphemy.com"
 
 session = requests.Session()
 session.auth = (config['dbinfo']['user'], config['dbinfo']['pass'])
+session.headers.update({f"User-Agent": f"Mozilla/5.0; ThePeePs auto Downloader v.{__version__}"})
 
 if config['proxy']['use']:
     for server in config['proxy']['servers']:
